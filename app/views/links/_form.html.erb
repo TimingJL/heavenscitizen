@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :titile %>
-    <%= form.text_field :titile, id: :link_titile %>
+    <%= form.text_field :titile, id: :link_titile, required: true %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description, id: :link_description %>
+    <%= form.text_area :description, id: :link_description, required: true %>
   </div>
 
   <!-- <div class="field">
@@ -33,12 +33,12 @@
 
   <div class="field">
     <%= form.label :announce_date %>
-    <%= form.date_field :announce_date, id: :link_announce_date %>
+    <%= form.date_field :announce_date, id: :link_announce_date, required: true %>
   </div>
 
   <div class="field">
     <%= form.label :url %>
-    <%= form.text_field :url, id: :link_url %>
+    <%= form.text_field :url, id: :link_url, required: true %>
   </div>
 
   <div class="actions">
