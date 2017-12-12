@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<div style='margin:20px auto;text-align: center;'>
+  <%= link_to 'New Link', new_link_path, class: "btn btn-primary" %>
+</div>
+
+
+<div class="row">
+  <% @links.each do |link| %>
+    <div class="col-md-4">
+      <div class="card" style="width: 318px; height:450px;">
+        <img class="card-img-top" height="230" src="<%= link.image %>" alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title"><%= link.titile %></h4>
+          <p class="card-text"><%= link.description %></p>
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+        <div class="card-footer text-muted">
+          <%= link_to 'Show', link, class: "btn btn-primary" %>
+          <%= link_to 'Edit', edit_link_path(link), class: "btn btn-primary" %>
+          <%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

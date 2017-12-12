@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titile:</strong>
+  <%= @link.titile %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @link.description %>
+</p>
+
+<p>
+  <strong>Favicon:</strong>
+  <%= @link.favicon %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @link.image %>
+</p>
+
+<p>
+  <strong>Announce date:</strong>
+  <%= @link.announce_date %>
+</p>
+
+<%= link_to 'Edit', edit_link_path(@link) %> |
+<%= link_to 'Back', links_path %>
