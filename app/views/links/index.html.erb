@@ -8,8 +8,8 @@
 <div class="row">
   <% @links.each do |link| %>
     <div class="col-md-4">
-      <div class="card" style="width: 318px; height:450px;">
-        <img class="card-img-top" height="230" src="<%= link.image %>" alt="Card image cap">
+      <div class="card" style="width: 318px; height:450px; margin:10px auto;">
+        <%= link_to(image_tag(link.image, height:"230px;", width:"317px;"), link) %>
         <div class="card-block">
           <h4 class="card-title"><%= link.titile %></h4>
           <p class="card-text"><%= link.description %></p>

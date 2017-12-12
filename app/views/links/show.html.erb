@@ -1,29 +1,22 @@
 <p id="notice"><%= notice %></p>
+<div class="">
+  <div class="card" style="max-width:500px; width: 100%; height:auto; margin:10px auto;">
 
-<p>
-  <strong>Titile:</strong>
-  <%= @link.titile %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @link.description %>
-</p>
-
-<p>
-  <strong>Favicon:</strong>
-  <%= @link.favicon %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @link.image %>
-</p>
-
-<p>
-  <strong>Announce date:</strong>
-  <%= @link.announce_date %>
-</p>
+    <iframe width="100%" height="auto"
+      src="//www.youtube.com/embed/" + <%= @link.url.split("=").last %> >
+    </iframe>
+    <div class="card-block">
+      <h4 class="card-title"><%= @link.titile %></h4>
+      <p class="card-text"><%= @link.description %></p>
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    </div>
+    <div class="card-footer text-muted">
+      <%= link_to 'Show', @link, class: "btn btn-primary" %>
+      <%= link_to 'Edit', edit_link_path(@link), class: "btn btn-primary" %>
+      <%= link_to 'Destroy', @link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_link_path(@link) %> |
 <%= link_to 'Back', links_path %>
