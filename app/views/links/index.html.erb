@@ -8,15 +8,14 @@
 <div class="row">
   <% @links.each do |link| %>
     <div class="col-md-4">
-      <div class="card" style="width: 318px; height:450px; margin:10px auto;">
-        <%= link_to(image_tag(link.image, height:"230px;", width:"317px;"), link) %>
-        <div class="card-block">
-          <h4 class="card-title"><%= link.titile %></h4>
+      <div class="card" style="width: 350px; height:400px; margin:10px auto;">
+        <%= link_to(image_tag(link.image, height:"235px;", width:"348px;"), link) %>
+        <div class="card-block" style='padding:20px;'>
+          <h5 class="card-title" style='font-weight:bold;'><%= link.titile %></h5>
           <p class="card-text"><%= link.description %></p>
           <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
         </div>
         <div class="card-footer text-muted">
-          <%= link_to 'Show', link, class: "btn btn-primary", style: 'color:white;' %>
           <%= link_to 'Edit', edit_link_path(link), class: "btn btn-primary", style: 'color:white;' %>
           <%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary", style: 'color:white;' %>
         </div>

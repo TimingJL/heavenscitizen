@@ -10,18 +10,16 @@
       allow="encrypted-media"
       allowfullscreen>
     </iframe>
-    <div class="card-block">
+    <div class="card-block" style='padding:20px;'>
       <h4 class="card-title"><%= @link.titile %></h4>
       <p class="card-text"><%= @link.description %></p>
       <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
     </div>
     <div class="card-footer text-muted">
-      <%= link_to 'Show', @link, class: "btn btn-primary" %>
       <%= link_to 'Edit', edit_link_path(@link), class: "btn btn-primary" %>
       <%= link_to 'Destroy', @link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
     </div>
+    <%= link_to 'Back', links_path, class: "btn btn-primary" %>
   </div>
-</div>
 
-<%= link_to 'Edit', edit_link_path(@link) %> |
-<%= link_to 'Back', links_path %>
+</div>

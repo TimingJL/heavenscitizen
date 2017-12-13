@@ -2,17 +2,15 @@
 <nav class="navbar navbar-light" style="background-color: white;border-bottom: thick solid #00bcd4;">
     <!-- Home Button -->
     <a class="navbar-brand" href="<%= root_path %>" style='color: #00bcd4; font-weight: bold; font-size: 32px;'>天民</a>
-
     <!-- Login Button -->
     <form class="form-inline">
         <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
         <% if user_signed_in? %>
-            <%= link_to '登出', destroy_user_session_path, method: :delete, class: 'btn btn-outline-danger my-2 my-sm-0' %>&nbsp
-            <%= link_to '修改密碼', edit_user_registration_path, class: 'btn btn-outline-danger my-2 my-sm-0' %>
+            <%= link_to '修改密碼', edit_user_registration_path, class: 'btn btn-outline-primary my-2 my-sm-0' %>&nbsp
+            <%= link_to '登出', destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary my-2 my-sm-0' %>
         <% else %>
             <%= link_to '註冊', new_user_registration_path, class: 'btn btn-outline-primary my-2 my-sm-0' %>&nbsp
             <%= link_to '登入', new_user_session_path, class: 'btn btn-outline-primary my-2 my-sm-0' %>
         <% end %>
     </form>
-
 </nav>
