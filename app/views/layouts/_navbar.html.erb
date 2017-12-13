@@ -1,25 +1,18 @@
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded" style="background-color: #26a69a;">
-    <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button> -->
-    <a class="navbar-brand" href="<% root_path %>" style="color:white;font-weight:bold;">天民</a>
+<!-- Navbar -->
+<nav class="navbar navbar-light" style="background-color: white;border-bottom: thick solid #00bcd4;">
+    <!-- Home Button -->
+    <a class="navbar-brand" href="<%= root_path %>" style='color: #00bcd4; font-weight: bold; font-size: 32px;'>天民</a>
 
-    <ul class="navbar-nav ml-auto" style='color:white;'>
-        <% if current_user %>
-            <li class="nav-item">
-              <%= link_to('登出', destroy_user_session_path, :method => :delete, class: "nav-link", style: 'color:white;') %>
-            </li>
-            <li class="navbar-item">
-              <%= link_to('修改密碼', edit_registration_path(:user), class: "nav-link", style: 'color:white;') %>
-            </li>
+    <!-- Login Button -->
+    <form class="form-inline">
+        <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+        <% if user_signed_in? %>
+            <%= link_to '登出', destroy_user_session_path, method: :delete, class: 'btn btn-outline-danger my-2 my-sm-0' %>&nbsp
+            <%= link_to '修改密碼', edit_user_registration_path, class: 'btn btn-outline-danger my-2 my-sm-0' %>
         <% else %>
-            <li class="navbar-item">
-              <%= link_to('註冊', new_registration_path(:user), class: "nav-link", style: 'color:white;') %>
-            </li>
-            <li class="navbar-item">
-              <%= link_to('登入', new_session_path(:user), class: "nav-link", style: 'color:white;') %>
-            </li>
+            <%= link_to '註冊', new_user_registration_path, class: 'btn btn-outline-primary my-2 my-sm-0' %>&nbsp
+            <%= link_to '登入', new_user_session_path, class: 'btn btn-outline-primary my-2 my-sm-0' %>
         <% end %>
-    </ul>
+    </form>
 
 </nav>
