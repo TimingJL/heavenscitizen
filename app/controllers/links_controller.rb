@@ -1,6 +1,9 @@
 class LinksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_link, only: [:show, :edit, :update, :destroy]
+  config.authorize_with do
+    redirect_to main_app.root_path unless current_user.certification == true
+  end
 
   # GET /links
   # GET /links.json
