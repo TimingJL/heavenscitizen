@@ -16,10 +16,11 @@
       <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
     </div>
     <div class="card-footer text-muted">
-      <%= link_to 'Edit', edit_link_path(@link), class: "btn btn-primary" %>
-      <%= link_to 'Destroy', @link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
+      <%= link_to '編輯', edit_link_path(@link), class: "btn btn-secondary" %>
+      <%= link_to '刪除', @link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary" %>
+      <%= link_to 'Back', links_path, class: "btn btn-secondary" %>
     </div>
-    <%= link_to 'Back', links_path, class: "btn btn-primary" %>
+
   </div>
 
 </div>
