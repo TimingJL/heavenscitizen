@@ -5,31 +5,37 @@
     </div>
 <% end %>
 
+<% if current_user.certification? %>
+  <div class="row">
+    <% @links.each do |link| %>
+      <div class="col-md-4">
+        <div class="card" style="width: 350px; margin:10px auto;">
+          <%= link_to(image_tag(link.image, height:"235px;", width:"348px;"), link) %>
+          <div class="card-block" style='padding:20px;'>
+            <h5 class="card-title" style='font-weight:bold;'><%= link.titile %></h5>
+            <p class="card-text"><%= link.description %></p>
+            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          </div>
+          <% if user_signed_in? and current_user.admin? %>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <span>
+                  <%= link_to '編輯', edit_link_path(link), class: "btn btn-secondary", style: 'color:white;' %>
+                  <%= link_to '刪除', link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary", style: 'color:white;' %>
+                </apn>
+              </li>
+              <!-- <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Vestibulum at eros</li> -->
+            </ul>
+          <% end %>
 
-<div class="row">
-  <% @links.each do |link| %>
-    <div class="col-md-4">
-      <div class="card" style="width: 350px; margin:10px auto;">
-        <%= link_to(image_tag(link.image, height:"235px;", width:"348px;"), link) %>
-        <div class="card-block" style='padding:20px;'>
-          <h5 class="card-title" style='font-weight:bold;'><%= link.titile %></h5>
-          <p class="card-text"><%= link.description %></p>
-          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
         </div>
-        <% if user_signed_in? and current_user.admin? %>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <span>
-                <%= link_to '編輯', edit_link_path(link), class: "btn btn-secondary", style: 'color:white;' %>
-                <%= link_to '刪除', link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary", style: 'color:white;' %>
-              </apn>
-            </li>
-            <!-- <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Vestibulum at eros</li> -->
-          </ul>
-        <% end %>
-
       </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
+<% else %>
+  <h1>您的權限還沒開通</h1>
+  <div>感謝您的註冊!</div>
+  <div>請您耐心等候審核，方可聆聽話語</div>
+  <div>若欲加速審核時間，請聯絡天民音響部，謝謝您 :)</div>
+<% end %>
