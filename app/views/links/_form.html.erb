@@ -12,14 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :titile %>
-    <%= form.text_field :titile, id: :link_titile, required: true %>
-  </div>
+    標題
+    <%= form.text_field :titile, id: :link_titile, required: true, class:"form-control" %>
+  </div><br>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :link_description, required: true %>
-  </div>
+    描述
+    <%= form.text_area :description, id: :link_description, required: true, class:"form-control" %>
+  </div><br>
 
   <!-- <div class="field">
     <%= form.label :favicon %>
@@ -32,16 +32,16 @@
   </div> -->
 
   <div class="field">
-    <%= form.label :announce_date %>
-    <%= form.date_field :announce_date, id: :link_announce_date, required: true %>
-  </div>
+    日期
+    <%= form.date_field :announce_date, id: :link_announce_date, required: true, class:"form-control" %>
+  </div><br>
 
   <div class="field">
-    <%= form.label :url %>
-    <%= form.text_field :url, id: :link_url, required: true %>
-  </div>
+    Youtube連結(url)
+    <%= form.text_field :url, id: :link_url, required: true, class:"form-control" %>
+  </div><br>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :class => 'btn btn-success btn-block btn-lg', :value=>"確認" %>
   </div>
 <% end %>
