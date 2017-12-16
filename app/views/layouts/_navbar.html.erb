@@ -11,10 +11,10 @@
               <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="sr-only">Toggle Dropdown</span>
               </button>
-              <div class="dropdown-menu dropdown-menu-right">
-                <button class="dropdown-item" type="button">Action</button>
-                <button class="dropdown-item" type="button">Another action</button>
-                <button class="dropdown-item" type="button">Something else here</button>
+              <div class="dropdown-menu dropdown-menu-right" style='right:0;'>
+                <%= link_to '管理平台', rails_admin_path, class: 'dropdown-item btn btn-outline-primary my-2 my-sm-0' %>
+                <%= link_to '聚會時間分類', service_time_categories_path, class: 'dropdown-item btn btn-outline-primary my-2 my-sm-0' %>
+
               </div>
             </div>&nbsp
             <%= link_to '登出', destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary my-2 my-sm-0' %>
