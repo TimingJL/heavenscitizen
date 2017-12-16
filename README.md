@@ -1,12 +1,13 @@
 # README
 
 
-* Adding Custom Fields to Devise
+* Adding Custom Fields to Devise       
 http://www.peoplecancode.com/tutorials/adding-custom-fields-to-devise
 
-* Model 關連性(關連：一對一, 一對多, 多對多)
+* Model 關連性(關連：一對一, 一對多, 多對多)      
 http://railsbook.tw/chapters/18-model-relationship.html#many-to-many-relationship
 
+# Check Box Tag(多對多Model)
 ### 產生第三方 Model
 ```
 $ bin/rails g model LinksServiceTime link:references service_time_category:references
