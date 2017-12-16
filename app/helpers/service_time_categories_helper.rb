@@ -1,0 +1,2 @@
+module ServiceTimeCategoriesHelper
+end

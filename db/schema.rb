@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171213182330) do
+ActiveRecord::Schema.define(version: 20171216065656) do
 
   create_table "links", force: :cascade do |t|
     t.string "titile"
@@ -22,7 +22,24 @@ ActiveRecord::Schema.define(version: 20171213182330) do
     t.datetime "updated_at", null: false
     t.string "url"
     t.integer "user_id"
+    t.integer "service_time_category_id"
     t.index ["user_id"], name: "index_links_on_user_id"
+  end
+
+  create_table "links_service_times", force: :cascade do |t|
+    t.integer "link_id"
+    t.integer "service_time_category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["link_id"], name: "index_links_service_times_on_link_id"
+    t.index ["service_time_category_id"], name: "index_links_service_times_on_service_time_category_id"
+  end
+
+  create_table "service_time_categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "link_id"
   end
 
   create_table "users", force: :cascade do |t|
