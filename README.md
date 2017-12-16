@@ -4,6 +4,9 @@
 * Adding Custom Fields to Devise       
 http://www.peoplecancode.com/tutorials/adding-custom-fields-to-devise
 
+* Right-Aligned Navigation Bar         
+https://www.w3schools.com/bootstrap/bootstrap_navbar.asp
+
 * Model 關連性(關連：一對一, 一對多, 多對多)      
 http://railsbook.tw/chapters/18-model-relationship.html#many-to-many-relationship
 

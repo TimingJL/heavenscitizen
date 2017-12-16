@@ -8,9 +8,20 @@
         <% if user_signed_in? %>
             <%= link_to 'Profile', edit_user_registration_path, class: 'btn btn-outline-primary my-2 my-sm-0' %>&nbsp
             <%= link_to '登出', destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary my-2 my-sm-0' %>
+
         <% else %>
             <%= link_to '註冊', new_user_registration_path, class: 'btn btn-outline-primary my-2 my-sm-0' %>&nbsp
             <%= link_to '登入', new_user_session_path, class: 'btn btn-outline-primary my-2 my-sm-0' %>
         <% end %>
+
+
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
     </form>
 </nav>
