@@ -16,6 +16,13 @@
         <p class="card-text"><%= @link.description %></p>
         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
       </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+              <% @link.service_time_categories.each do |category| %>
+                #<%= category.name %>
+              <% end %>
+        </li>
+      </ul>
       <div class="card-footer text-muted">
         <% if user_signed_in? and current_user.admin? %>
             <%= link_to '編輯', edit_link_path(@link), class: "btn btn-secondary" %>
