@@ -1,0 +1,2 @@
+module WordContentCategoriesHelper
+end

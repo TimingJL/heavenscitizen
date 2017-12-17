@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @word_content_category.name %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @word_content_category.order %>
+</p>
+
+<%= link_to 'Edit', edit_word_content_category_path(@word_content_category) %> |
+<%= link_to 'Back', word_content_categories_path %>

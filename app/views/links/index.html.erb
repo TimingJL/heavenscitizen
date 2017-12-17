@@ -25,6 +25,10 @@
                   <% link.service_type_categories.each do |category| %>
                     #<%= category.name %>
                   <% end %>
+
+                  <% link.word_content_categories.each do |category| %>
+                    #<%= category.name %>
+                  <% end %>
             </li>
           </ul>
           <% if user_signed_in? and current_user.admin? %>

@@ -51,6 +51,11 @@
     <%= form.collection_check_boxes :service_type_category_ids, ServiceTypeCategory.all, :id, :name, class:"form-control" %>
   </div><br>
 
+  <div class="field">
+    話語內容分類<br>
+    <%= form.collection_check_boxes :word_content_category_ids, WordContentCategory.all, :id, :name, class:"form-control" %>
+  </div><br>
+
   <div class="actions">
     <%= form.submit :class => 'btn btn-success btn-block btn-lg', :value=>"確認" %>
   </div>
