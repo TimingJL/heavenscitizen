@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :service_type_categories
   resources :service_time_categories
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @service_type_category.name %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @service_type_category.order %>
+</p>
+
+<%= link_to 'Edit', edit_service_type_category_path(@service_type_category) %> |
+<%= link_to 'Back', service_type_categories_path %>

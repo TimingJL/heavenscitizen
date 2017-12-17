@@ -39,11 +39,16 @@
   <div class="field">
     Youtube連結(url)
     <%= form.text_field :url, id: :link_url, required: true, class:"form-control" %>
-  </div><br>
+  </div><br><hr>
 
   <div class="field">
     聚會時間分類<br>
     <%= form.collection_check_boxes :service_time_category_ids, ServiceTimeCategory.all, :id, :name, class:"form-control" %>
+  </div><br>
+
+  <div class="field">
+    聚會類型分類<br>
+    <%= form.collection_check_boxes :service_type_category_ids, ServiceTypeCategory.all, :id, :name, class:"form-control" %>
   </div><br>
 
   <div class="actions">

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171216065656) do
+ActiveRecord::Schema.define(version: 20171217044722) do
 
   create_table "links", force: :cascade do |t|
     t.string "titile"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20171216065656) do
     t.string "url"
     t.integer "user_id"
     t.integer "service_time_category_id"
+    t.integer "service_type_category_id"
     t.index ["user_id"], name: "index_links_on_user_id"
   end
 
@@ -35,8 +36,25 @@ ActiveRecord::Schema.define(version: 20171216065656) do
     t.index ["service_time_category_id"], name: "index_links_service_times_on_service_time_category_id"
   end
 
+  create_table "links_service_types", force: :cascade do |t|
+    t.integer "link_id"
+    t.integer "service_type_category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["link_id"], name: "index_links_service_types_on_link_id"
+    t.index ["service_type_category_id"], name: "index_links_service_types_on_service_type_category_id"
+  end
+
   create_table "service_time_categories", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "link_id"
+  end
+
+  create_table "service_type_categories", force: :cascade do |t|
+    t.string "name"
+    t.integer "order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "link_id"
