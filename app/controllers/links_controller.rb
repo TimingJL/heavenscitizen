@@ -5,7 +5,7 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    @links = Link.all.order("created_at DESC")
+    @links = Link.all.order(announce_date: :desc)
   end
 
   # GET /links/1
