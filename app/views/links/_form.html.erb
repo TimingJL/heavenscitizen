@@ -16,11 +16,6 @@
     <%= form.text_field :titile, id: :link_titile, required: true, class:"form-control" %>
   </div><br>
 
-  <div class="field">
-    描述
-    <%= form.text_area :description, id: :link_description, required: true, class:"form-control" %>
-  </div><br>
-
   <!-- <div class="field">
     <%= form.label :favicon %>
     <%= form.text_field :favicon, id: :link_favicon %>
@@ -56,6 +51,11 @@
     <%= form.collection_check_boxes :word_content_category_ids, WordContentCategory.all, :id, :name, class:"form-control" %>
   </div><br>
 
+  <div class="field">
+    描述/備註
+    <%= form.text_area :description, id: :link_description, required: true, class:"form-control" %>
+  </div><br>
+  
   <div class="actions">
     <%= form.submit :class => 'btn btn-success btn-block btn-lg', :value=>"確認" %>
   </div>
