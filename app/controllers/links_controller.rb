@@ -15,7 +15,7 @@ class LinksController < ApplicationController
 
   # GET /links/new
   def new
-    @link = current_user.links.build
+    @link = Link.new
   end
 
   # GET /links/1/edit
@@ -25,7 +25,7 @@ class LinksController < ApplicationController
   # POST /links
   # POST /links.json
   def create
-    @link = current_user.links.build(link_params)
+    @link = Link.new(link_params)
 
     require 'link_thumbnailer'
     object = LinkThumbnailer.generate(@link.url)

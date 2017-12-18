@@ -1,5 +1,5 @@
 class Link < ApplicationRecord
-  belongs_to :user
+  # belongs_to :user
 
   #Link Model relationship Service Time Cateogry Model
   has_many :links_service_times, dependent: :destroy
