@@ -30,6 +30,19 @@
               #<%= category.name %>
             <% end %>
         </li>
+
+        <li class="list-group-item">
+            <% @link.words.each do |word| %>
+                  <h5><%= word.title %></h5>
+                  <div><%= simple_format word.content %></div>
+
+                  <%= link_to 'Destroy', [word.link, word], method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+        </li>
+
+        <li class="list-group-item">
+            <%= render 'words/form', word: @word %>
+        </li>
       </ul>
       <div class="card-footer text-muted">
         <% if user_signed_in? and current_user.admin? %>

@@ -1,0 +1,38 @@
+
+<%= form_for([@link, @link.words.build]) do |form| %>
+
+  <div class="field">
+    <%= form.label :title %><br>
+    <%= form.text_field :title, id: :word_title, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %><br>
+    <%= form.text_area :content, id: :word_content, class: 'form-control' %>
+  </div>
+
+  <!-- <div class="field" style="display:none"> -->
+  <div class="field">
+    <%= form.label :link_id %>
+    <%= form.number_field :link_id, id: :word_link_id, :value => params["id"] %>
+  </div>
+
+  <div class="field">
+    聚會時間分類<br>
+    <%= form.collection_check_boxes :service_time_category_id, ServiceTimeCategory.all, :id, :name, class:"form-control" %>
+  </div><br>
+
+  <div class="field">
+    聚會類型分類<br>
+    <%= form.collection_check_boxes :service_type_category_id, ServiceTypeCategory.all, :id, :name, class:"form-control" %>
+  </div><br>
+
+  <div class="field">
+    話語內容分類<br>
+    <%= form.collection_check_boxes :word_content_category_id, WordContentCategory.all, :id, :name, class:"form-control" %>
+  </div><br>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

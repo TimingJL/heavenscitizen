@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  content: MyString
+  link_id: 1
+  service_time_category_id: 1
+  service_type_category_id: 1
+  word_content_category_id: 1
+
+two:
+  title: MyString
+  content: MyString
+  link_id: 1
+  service_time_category_id: 1
+  service_type_category_id: 1
+  word_content_category_id: 1

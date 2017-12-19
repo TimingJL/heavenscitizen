@@ -12,4 +12,7 @@ class Link < ApplicationRecord
   #Link Model relationship Word Content Cateogry Model
   has_many :links_word_contents
   has_many :word_content_categories, through: :links_word_contents, dependent: :destroy
+
+  #word
+  has_many :words
 end
