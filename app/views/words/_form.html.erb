@@ -1,21 +1,23 @@
-
-<%= form_for([@link, @link.words.build]) do |form| %>
+<% if word == nil %>
+<% word = @link.words.build %>
+<% end %>
+<%= form_for([@link, word ]) do |form| %>
 
   <div class="field">
-    <%= form.label :title %><br>
+    話語標題<br>
     <%= form.text_field :title, id: :word_title, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :content %><br>
+    話語本文<br>
     <%= form.text_area :content, id: :word_content, class: 'form-control' %>
   </div>
 
-  <!-- <div class="field" style="display:none"> -->
-  <div class="field">
+  <div class="field" style="display:none">
+  <!-- <div class="field"> -->
     <%= form.label :link_id %>
-    <%= form.number_field :link_id, id: :word_link_id, :value => params["id"] %>
-  </div>
+    <%= form.number_field :link_id, id: :word_link_id, :value => params["link_id"] || params["id"] %>
+  </div><br>
 
   <div class="field">
     聚會時間分類<br>

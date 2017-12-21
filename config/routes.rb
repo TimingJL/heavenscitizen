@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  #resources :words
+  resources :words
   resources :word_content_categories
   resources :service_type_categories
   resources :service_time_categories

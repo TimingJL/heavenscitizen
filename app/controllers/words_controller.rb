@@ -19,6 +19,8 @@ class WordsController < ApplicationController
 
   # GET /words/1/edit
   def edit
+    @link = Link.find(params[:link_id])
+    @word = Word.find(params[:id])#
   end
 
   # POST /words
@@ -43,7 +45,7 @@ class WordsController < ApplicationController
   def update
     respond_to do |format|
       if @word.update(word_params)
-        format.html { redirect_to @word, notice: 'Word was successfully updated.' }
+        format.html { redirect_to link_path(@word.link_id), notice: 'Word was successfully updated.' }
         format.json { render :show, status: :ok, location: @word }
       else
         format.html { render :edit }

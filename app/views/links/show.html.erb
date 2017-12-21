@@ -35,14 +35,18 @@
             <% @link.words.each do |word| %>
                   <h5><%= word.title %></h5>
                   <div><%= simple_format word.content %></div>
-
-                  <%= link_to 'Destroy', [word.link, word], method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <% if user_signed_in? and current_user.admin? %>
+                    <%= link_to 'Edit', edit_link_word_path(@link, word, :id => word.id, :link_id => word.link_id), class: "btn btn-outline-info btn-sm" %>
+                    <%= link_to 'Destroy', [word.link, word], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
+                  <% end %><hr>
             <% end %>
         </li>
 
-        <li class="list-group-item">
-            <%= render 'words/form', word: @word %>
-        </li>
+        <% if user_signed_in? and current_user.admin? %>
+          <li class="list-group-item">
+              <%= render 'words/form', word: @word %>
+          </li>
+        <% end %>
       </ul>
       <div class="card-footer text-muted">
         <% if user_signed_in? and current_user.admin? %>

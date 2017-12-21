@@ -8,7 +8,7 @@
         <% if user_signed_in? %>
             <% if current_user.admin? %>
                 <div class="btn-group">
-                  <%= link_to 'Profile', edit_user_registration_path, class: 'btn btn-outline-primary my-2 my-sm-0' %>
+                  <%= link_to current_user.name, edit_user_registration_path, class: 'btn btn-outline-primary my-2 my-sm-0' %>
                   <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="sr-only">Toggle Dropdown</span>
                   </button>
@@ -20,7 +20,7 @@
                   </div>
                 </div>
             <% else %>
-                <%= link_to 'Profile', edit_user_registration_path, class: 'btn btn-outline-primary my-2 my-sm-0' %>
+                <%= link_to current_user.name, edit_user_registration_path, class: 'btn btn-outline-primary my-2 my-sm-0' %>
             <% end %>
             &nbsp
             <%= link_to '登出', destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary my-2 my-sm-0' %>

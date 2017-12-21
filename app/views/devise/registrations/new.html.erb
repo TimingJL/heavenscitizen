@@ -9,10 +9,10 @@
 
           <div>
               姓名<br />
-              <%= f.text_field :name, autofocus: true, required: true, class:"form-control" %>
+              <%= f.text_field :name, autofocus: true, required: true, placeholder: "請填入本名以供身份審核", class:"form-control" %>
           </div><br />
 
-          <div>性別<br /><%= f.select :is_female, {"男性" => false, "女性" => true} %></div><br />
+          <div>性別<br /><%= f.select :is_female, {"男性" => false, "女性" => true}, required:true  %></div><br />
 
           <div>
               生日<br />
