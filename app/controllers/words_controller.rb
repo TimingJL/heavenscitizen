@@ -61,7 +61,7 @@ class WordsController < ApplicationController
 
     @word.destroy
     respond_to do |format|
-      format.html { redirect_to @link, notice: 'Word was successfully destroyed.' }
+      format.html { redirect_to link_path(@word.link_id), notice: 'Word was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
