@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171218220202) do
+ActiveRecord::Schema.define(version: 20171221220538) do
 
   create_table "links", force: :cascade do |t|
     t.string "titile"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20171218220202) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "link_id"
+    t.integer "word_id"
   end
 
   create_table "service_type_categories", force: :cascade do |t|
@@ -68,6 +69,7 @@ ActiveRecord::Schema.define(version: 20171218220202) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "link_id"
+    t.integer "word_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -98,6 +100,34 @@ ActiveRecord::Schema.define(version: 20171218220202) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "link_id"
+    t.integer "word_id"
+  end
+
+  create_table "word_service_times", force: :cascade do |t|
+    t.integer "word_id"
+    t.integer "service_time_category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["service_time_category_id"], name: "index_word_service_times_on_service_time_category_id"
+    t.index ["word_id"], name: "index_word_service_times_on_word_id"
+  end
+
+  create_table "word_service_types", force: :cascade do |t|
+    t.integer "word_id"
+    t.integer "service_type_category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["service_type_category_id"], name: "index_word_service_types_on_service_type_category_id"
+    t.index ["word_id"], name: "index_word_service_types_on_word_id"
+  end
+
+  create_table "word_word_contents", force: :cascade do |t|
+    t.integer "word_id"
+    t.integer "word_content_category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["word_content_category_id"], name: "index_word_word_contents_on_word_content_category_id"
+    t.index ["word_id"], name: "index_word_word_contents_on_word_id"
   end
 
   create_table "words", force: :cascade do |t|

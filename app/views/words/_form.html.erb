@@ -21,17 +21,17 @@
 
   <div class="field">
     聚會時間分類<br>
-    <%= form.collection_check_boxes :service_time_category_id, ServiceTimeCategory.all, :id, :name, class:"form-control" %>
+    <%= form.collection_check_boxes :service_time_category_ids, ServiceTimeCategory.all, :id, :name, class:"form-control" %>
   </div><br>
 
   <div class="field">
     聚會類型分類<br>
-    <%= form.collection_check_boxes :service_type_category_id, ServiceTypeCategory.all, :id, :name, class:"form-control" %>
+    <%= form.collection_check_boxes :service_type_category_ids, ServiceTypeCategory.all, :id, :name, class:"form-control" %>
   </div><br>
 
   <div class="field">
     話語內容分類<br>
-    <%= form.collection_check_boxes :word_content_category_id, WordContentCategory.all, :id, :name, class:"form-control" %>
+    <%= form.collection_check_boxes :word_content_category_ids, WordContentCategory.all, :id, :name, class:"form-control" %>
   </div><br>
 
   <div class="actions">
