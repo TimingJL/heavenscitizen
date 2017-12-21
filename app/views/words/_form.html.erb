@@ -5,12 +5,12 @@
 
   <div class="field">
     話語標題<br>
-    <%= form.text_field :title, id: :word_title, class: 'form-control' %>
+    <%= form.text_field :title, id: :word_title, required: true, class: 'form-control' %>
   </div>
 
   <div class="field">
     話語本文<br>
-    <%= form.text_area :content, id: :word_content, class: 'form-control' %>
+    <%= form.text_area :content, id: :word_content, required: true, class: 'form-control' %>
   </div>
 
   <div class="field" style="display:none">
