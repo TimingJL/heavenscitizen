@@ -54,12 +54,12 @@
 
 
         <% if user_signed_in? and current_user.admin? %>
-        <button class="btn btn-info" onclick="onFormToggle()">
-            <i class="fa fa-caret-down" aria-hidden="true"></i> 新增話語文字
-        </button>
-          <li id='word_form' style='display: none;' class="list-group-item">
-              <%= render 'words/form', word: @word %>
-          </li>
+            <button class="btn btn-info" onclick="onFormToggle()">
+                <i class="fa fa-caret-down" aria-hidden="true"></i> 新增話語文字
+            </button>
+              <li id='word_form' style='display: none;' class="list-group-item">
+                  <%= render 'words/form', word: @word %>
+              </li>
         <% end %>
       </ul>
       <div class="card-footer text-muted">
