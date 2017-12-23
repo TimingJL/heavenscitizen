@@ -31,28 +31,33 @@
             <% end %>
         </li>
 
-        <li class="list-group-item">
-            <% @link.words.each do |word| %>
-                  <h5><%= word.title %></h5>
-                  <div><%= simple_format word.content %></div>
-                  <% word.service_time_categories.each do |category| %>
-                    #<%= category.name %>
-                  <% end %>
-                  <% word.service_type_categories.each do |category| %>
-                    #<%= category.name %>
-                  <% end %>
-                  <% word.word_content_categories.each do |category| %>
-                    #<%= category.name %>
-                  <% end %>
-                  <% if user_signed_in? and current_user.admin? %>
-                    <br><%= link_to 'Edit', edit_link_word_path(@link, word, :id => word.id, :link_id => word.link_id), class: "btn btn-outline-info btn-sm" %>
-                    <%= link_to 'Destroy', [word.link, word], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
-                  <% end %><hr>
-            <% end %>
-        </li>
+
+        <% @link.words.each do |word| %>
+          <li class="list-group-item">
+              <h5><%= word.title %></h5>
+              <div><%= simple_format word.content %></div>
+              <% word.service_time_categories.each do |category| %>
+                #<%= category.name %>
+              <% end %>
+              <% word.service_type_categories.each do |category| %>
+                #<%= category.name %>
+              <% end %>
+              <% word.word_content_categories.each do |category| %>
+                #<%= category.name %>
+              <% end %>
+              <% if user_signed_in? and current_user.admin? %>
+                <br><%= link_to 'Edit', edit_link_word_path(@link, word, :id => word.id, :link_id => word.link_id), class: "btn btn-outline-info btn-sm" %>
+                <%= link_to 'Destroy', [word.link, word], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
+              <% end %>
+          </li>
+        <% end %>
+
 
         <% if user_signed_in? and current_user.admin? %>
-          <li class="list-group-item">
+        <button class="btn btn-info" onclick="onFormToggle()">
+            <i class="fa fa-caret-down" aria-hidden="true"></i> 新增話語文字
+        </button>
+          <li id='word_form' style='display: none;' class="list-group-item">
               <%= render 'words/form', word: @word %>
           </li>
         <% end %>
@@ -71,3 +76,14 @@
 <% else %>
   <%= render 'certification' %>
 <% end %>
+
+<script>
+  function onFormToggle() {
+      var x = document.getElementById("word_form");
+      if (x.style.display === "none") {
+          x.style.display = "block";
+      } else {
+          x.style.display = "none";
+      }
+  }
+</script>
