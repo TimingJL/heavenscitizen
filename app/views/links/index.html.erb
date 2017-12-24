@@ -4,7 +4,7 @@
       <%= link_to '新增影片', new_link_path, class: "btn btn-info btn-lg", style: 'color:white;' %>
     </div>
 <% end %>
-
+<%= @teamp %>
 <% if current_user.certification? %>
   <div class="row">
     <% @links.each do |link| %>
@@ -19,15 +19,24 @@
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
                   <% link.service_time_categories.each do |category| %>
-                    #<%= category.name %>
+                    <form style='display:inline-block;'>
+                      <%= text_field_tag :tag, params[:tag], value: category.name,style: "display:none;" %>
+                      <input class='btn btn-outline-secondary btn-sm' type="submit" value='<%= category.name %>'>
+                    </form>
                   <% end %>
 
                   <% link.service_type_categories.each do |category| %>
-                    #<%= category.name %>
+                    <form style='display:inline-block;'>
+                      <%= text_field_tag :tag, params[:tag], value: category.name,style: "display:none;" %>
+                      <input class='btn btn-outline-secondary btn-sm' type="submit" value='<%= category.name %>'>
+                    </form>
                   <% end %>
 
                   <% link.word_content_categories.each do |category| %>
-                    #<%= category.name %>
+                    <form style='display:inline-block;'>
+                      <%= text_field_tag :tag, params[:tag], value: category.name,style: "display:none;" %>
+                      <input class='btn btn-outline-secondary btn-sm' type="submit" value='<%= category.name %>'>
+                    </form>
                   <% end %>
             </li>
           </ul>

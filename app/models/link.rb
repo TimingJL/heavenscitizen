@@ -15,4 +15,5 @@ class Link < ApplicationRecord
 
   #word
   has_many :words
+
 end

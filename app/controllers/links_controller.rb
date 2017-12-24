@@ -6,6 +6,37 @@ class LinksController < ApplicationController
   # GET /links.json
   def index
     @links = Link.all.order(announce_date: :desc)
+
+    #simple search
+    if params[:tag]
+      # @links = Link.order(announce_date: :desc).search(params[:search])
+      # @links = Link.order(announce_date: :desc).select { |link| link.service_time_categories.select { |category| category.name == params[:search] } }
+      @links = []
+      Link.all.order(announce_date: :desc).each do |link|
+        link.service_time_categories.each do |category|
+          if(category.name == params[:tag])
+            @links.push(link)
+          end
+        end
+
+        link.service_type_categories.each do |category|
+          if(category.name == params[:tag])
+            @links.push(link)
+          end
+        end
+
+        link.word_content_categories.each do |category|
+          if(category.name == params[:tag])
+            @links.push(link)
+          end
+        end
+      end
+
+
+
+    else
+      @links = Link.all.order(announce_date: :desc)
+    end
   end
 
   # GET /links/1
